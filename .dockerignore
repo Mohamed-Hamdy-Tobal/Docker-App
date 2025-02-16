@@ -1,0 +1,18 @@
+# تجاهل مجلد node_modules
+node_modules/
+
+# تجاهل كل ملفات الـ Logs
+*.log
+logs/
+
+# تجاهل مجلد .git
+.git/
+
+# تجاهل ملفات الـ Environment
+.env
+
+# No Need for Dockerfile
+Dockerfile
+
+# تجاهل ملف README
+README.md
