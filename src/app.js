@@ -4,6 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import { bookRouter } from "./routes/books.route.js";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "../swagger.js";
 
 const app = express();
 
@@ -15,7 +17,9 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+// Routes
 app.use("/api/books", bookRouter);
 
 app.get("/", (req, res) => {
